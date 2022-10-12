@@ -43,14 +43,14 @@ namespace BookMyShowData
             List<Theatre> theatreList = db.theatres.ToList();
             return theatreList;
         }
-        public List<Theatre> ShowAllByTheatreAddressDAL(string address)
+        public List<Theatre> ShowAllByTheatreAddressDAL(string location)
         {
             //db = new MovieDbContext();
             List<Theatre> theatreList = db.theatres.ToList();
 
             //linq query-select * from movies where movietype='type'
             var result = from theatres in theatreList
-                         where theatres.Address == address
+                         where theatres.Location == location
                          orderby theatres.Name
                          select new Theatre
                          {

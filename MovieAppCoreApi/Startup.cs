@@ -50,6 +50,9 @@ namespace MovieAppCoreApi
             services.AddTransient<ShowTimingService, ShowTimingService>();
             services.AddTransient<IShowTimingRepository, ShowTimingRepository>();
 
+            services.AddTransient<UserService, UserService>();
+            services.AddTransient<IUserRepository, UserRepository>();
+
 
         }
 

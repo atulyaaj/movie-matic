@@ -30,9 +30,9 @@ namespace BookMyShowBusiness
         {
             return theatreDAL.ShowAllTheatreDAL();
         }
-        public List<Theatre> ShowAllByTheatreAddressBLL(string address)
+        public List<Theatre> ShowAllByTheatreAddressBLL(string location)
         {
-            return theatreDAL.ShowAllByTheatreAddressDAL(address);
+            return theatreDAL.ShowAllByTheatreAddressDAL(location);
         }
         public Theatre ShowTheatreByIdBLL(int theatreId)
         {
