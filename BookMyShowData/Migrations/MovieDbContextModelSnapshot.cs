@@ -19,6 +19,31 @@ namespace BookMyShowData.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
+            modelBuilder.Entity("BookMyShowEntity.Booking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ShowTimingId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShowTimingId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("bookings");
+                });
+
             modelBuilder.Entity("BookMyShowEntity.Movie", b =>
                 {
                     b.Property<int>("Id")
@@ -28,6 +53,9 @@ namespace BookMyShowData.Migrations
 
                     b.Property<string>("MovieDesc")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MoviePrice")
+                        .HasColumnType("int");
 
                     b.Property<string>("MovieType")
                         .HasColumnType("nvarchar(max)");
@@ -106,6 +134,25 @@ namespace BookMyShowData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("users");
+                });
+
+            modelBuilder.Entity("BookMyShowEntity.Booking", b =>
+                {
+                    b.HasOne("BookMyShowEntity.ShowTiming", "ShowTiming")
+                        .WithMany()
+                        .HasForeignKey("ShowTimingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookMyShowEntity.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ShowTiming");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BookMyShowEntity.ShowTiming", b =>

@@ -43,5 +43,11 @@ namespace MovieAppCoreApi.Controllers
             _movieService.UpdateMovie(movie);
             return Ok("Movie updated successfully!!");
         }
+
+        [HttpGet("GetMovieById")]
+        public Movie GetMovieById(int movieId)
+        {
+            return _movieService.GetMovieById(movieId);
+        }
     }
 }

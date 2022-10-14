@@ -34,7 +34,7 @@ namespace BookMyShowData.Repository
 
         public IEnumerable<ShowTiming> GetShowTimings()
         {
-            return _movieDbContext.showTimings.ToList();
+            return _movieDbContext.showTimings.Include(obj => obj.Movie).Include(obj=>obj.Theatre).ToList();
         }
 
         public void UpdateShowTiming(ShowTiming showTiming)

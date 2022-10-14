@@ -1,0 +1,29 @@
+﻿@model BookMyShowEntity.Booking
+
+<div>
+    <hr />
+    <a asp-controller="Booking" asp-action="Index">Go to Booking Index</a>
+    <hr />
+</div>
+<hr />
+<form method="post" enctype="multipart/form-data">
+    <h2 align="center">Delete Booking</h2><hr />
+    <div class="form-group">
+        <label>Booking Id</label>
+        <input type="text" asp-for="Id" class="form-control" placeholder="Enter Booking Id" required />
+    </div>
+    <input type="submit" value="Delete" class="btn btn-outline-danger" />
+    <hr />
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
+    }
+</form>

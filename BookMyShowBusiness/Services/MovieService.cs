@@ -25,9 +25,9 @@ namespace BookMyShowBusiness.Services
         {
             _movieRepository.DeleteMovie(movieId);
         }
-        public void GetMovieById(int movieId)
+        public Movie GetMovieById(int movieId)
         {
-            _movieRepository.GetMovieById(movieId);
+            return _movieRepository.GetMovieById(movieId);
         }
         public IEnumerable<Movie> GetMovies()
         {

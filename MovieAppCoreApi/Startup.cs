@@ -53,6 +53,9 @@ namespace MovieAppCoreApi
             services.AddTransient<UserService, UserService>();
             services.AddTransient<IUserRepository, UserRepository>();
 
+            services.AddTransient<BookingService, BookingService>();
+            services.AddTransient<IBookingRepository, BookingRepository>();
+
 
         }
 

@@ -25,9 +25,9 @@ namespace BookMyShowBusiness.Services
         {
             _showTimingRepository.DeleteShowTiming(showTimingId);
         }
-        public void GetShowTimingById(int showTimingId)
+        public ShowTiming GetShowTimingById(int showTimingId)
         {
-            _showTimingRepository.GetShowTimingById(showTimingId);
+            return _showTimingRepository.GetShowTimingById(showTimingId);
         }
         public IEnumerable<ShowTiming> GetShowTimings()
         {

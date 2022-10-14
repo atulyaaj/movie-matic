@@ -11,6 +11,7 @@ namespace BookMyShowEntity
         public int Id { get; set; }
         public string Name { get; set; }
         public string MovieDesc { get; set; }
-        public string MovieType { get; set; }
+        public string MovieType { get; set; } 
+        public int MoviePrice { get; set; }
     }
 }

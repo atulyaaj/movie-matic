@@ -42,5 +42,10 @@ namespace MovieAppCoreApi.Controllers
             _theatreService.UpdateTheatre(theatre);
             return Ok("Theatre updated successfully!!");
         }
+        [HttpGet("GetTheatreById")]
+        public Theatre GetTheatreById(int theatreId)
+        {
+            return _theatreService.GetTheatreById(theatreId);
+        }
     }
 }

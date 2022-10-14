@@ -25,9 +25,9 @@ namespace BookMyShowBusiness.Services
         {
             _theatreRepository.DeleteTheatre(theatreId);
         }
-        public void GetTheatreById(int theatreId)
+        public Theatre GetTheatreById(int theatreId)
         {
-            _theatreRepository.GetTheatreById(theatreId);
+            return _theatreRepository.GetTheatreById(theatreId);
         }
         public IEnumerable<Theatre> GetTheatres()
         {
