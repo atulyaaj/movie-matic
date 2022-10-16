@@ -13,25 +13,13 @@ namespace BookMyShowBusiness.Services
         {
             _userRepository = userRepository;
         }
-        public void AddUser(User user)
+        public void Register(User userInfo)
         {
-            _userRepository.AddUser(user);
+            _userRepository.Register(userInfo);
         }
-        public void UpdateUser(User user)
+        public User Login(User user)
         {
-            _userRepository.UpdateUser(user);
-        }
-        public void DeleteUser(int userId)
-        {
-            _userRepository.DeleteUser(userId);
-        }
-        public void GetUserById(int userId)
-        {
-            _userRepository.GetUserById(userId);
-        }
-        public IEnumerable<User> GetUsers()
-        {
-            return _userRepository.GetUsers();
+            return _userRepository.Login(user);
         }
     }
 }

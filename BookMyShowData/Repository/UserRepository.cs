@@ -14,33 +14,21 @@ namespace BookMyShowData.Repository
         {
             _movieDbContext = movieDbContext;
         }
-        public void AddUser(User user)
+
+        public User Login(User user)
         {
-            _movieDbContext.users.Add(user);
-            _movieDbContext.SaveChanges();
+            User userInfo = null;
+            var result = _movieDbContext.users.Where(obj => obj.Email == user.Email && obj.Password == user.Password).ToList();
+            if (result.Count > 0)
+            {
+                userInfo = result[0];
+            }
+            return userInfo;
         }
 
-        public void DeleteUser(int userId)
+        public void Register(User userInfo)
         {
-            var user = _movieDbContext.users.Find(userId);
-            _movieDbContext.users.Remove(user);
-            _movieDbContext.SaveChanges();
-        }
-
-        public User GetUserById(int userId)
-        {
-            User user= _movieDbContext.users.Find(userId);
-            return user;
-        }
-
-        public IEnumerable<User> GetUsers()
-        {
-            return _movieDbContext.users.ToList();
-        }
-
-        public void UpdateUser(User user)
-        {
-            _movieDbContext.Entry(user).State = EntityState.Modified;
+            _movieDbContext.users.Add(userInfo);
             _movieDbContext.SaveChanges();
         }
     }

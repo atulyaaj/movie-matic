@@ -18,7 +18,7 @@ namespace BookMyShowData
         public DbSet<Booking> bookings { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
-            dbContextOptionsBuilder.UseSqlServer("Data Source=VDC01LTC2125;Initial Catalog=BookMyShowShowDb;Integrated Security=True;");
+            dbContextOptionsBuilder.UseSqlServer("Data Source=DESKTOP-77OT55E\\SQLEXPRESS;Initial Catalog=BookMyShowShowDb;Integrated Security=True;");
         }
     }
 }

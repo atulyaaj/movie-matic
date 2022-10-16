@@ -16,32 +16,22 @@ namespace MovieAppCoreApi.Controllers
             _userService = userService;
         }
 
-        [HttpGet("GetUsers")]
-        public IEnumerable<User> GetUsers()
+        [HttpPost("Register")]
+        public IActionResult Register([FromBody] User userInfo)
         {
-            return _userService.GetUsers();
+            _userService.Register(userInfo);
+            return Ok("Register successfully!!");
         }
 
-        [HttpPost("AddUser")]
-        public IActionResult AddUser([FromBody] User user)
+        [HttpPost("Login")]
+        public IActionResult Login([FromBody] User user)
         {
-            _userService.AddUser(user);
-            return Ok("User created successfully!!");
+            User userInfo = _userService.Login(user);
+            if (userInfo != null)
+                return Ok("Login success!!");
+            else
+                return NotFound();
         }
 
-        [HttpDelete("DeleteUser")]
-        public IActionResult DeleteUser(int userId)
-        {
-            _userService.DeleteUser(userId);
-            return Ok("User deleted successfully!!");
-        }
-
-        [HttpPut("UpdateUser")]
-        public IActionResult UpdateUser([FromBody] User user)
-        {
-            _userService.UpdateUser(user);
-            return Ok("User updated successfully!!");
-        }
-        
     }
 }

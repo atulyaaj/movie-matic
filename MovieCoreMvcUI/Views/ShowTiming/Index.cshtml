@@ -14,9 +14,9 @@
             <thead>
                 <tr>
                     <th>Show Timing Id</th>
-                    <th>Movie Id</th>
+                    @*<th>Movie Id</th>*@
                     <th>Movie Name</th>
-                    <th>Theatre Id</th>
+                    @*<th>Theatre Id</th>*@
                     <th>Theatre Name</th>
                     <th>Show Time</th>
                     <th>Edit</th>
@@ -28,9 +28,9 @@
                 {
                     <tr>
                         <td>@showTiming.Id</td>
-                        <td>@showTiming.MovieId</td>
+                        @*<td>@showTiming.MovieId</td>*@
                         <td>@showTiming.Movie.Name</td>
-                        <td>@showTiming.TheatreId</td>
+                        @*<td>@showTiming.TheatreId</td>*@
                         <td>@showTiming.Theatre.Name</td>
                         <td>@showTiming.ShowTime</td>
                         <td><a asp-controller="ShowTiming" asp-action="EditShowTiming" asp-route-ShowTimingId="@showTiming.Id">Edit</a></td>

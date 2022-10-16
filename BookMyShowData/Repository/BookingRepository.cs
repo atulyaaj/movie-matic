@@ -35,7 +35,7 @@ namespace BookMyShowData.Repository
 
         public IEnumerable<Booking> GetBookings()
         {
-            return _movieDbContext.bookings.ToList();
+            return _movieDbContext.bookings.Include(obj => obj.User).Include(obj => obj.ShowTiming).ToList();
         }
 
         public void UpdateBooking(Booking booking)
