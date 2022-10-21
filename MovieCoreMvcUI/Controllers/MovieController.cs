@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace MovieCoreMvcUI.Controllers
 
         public MovieController(IConfiguration configuration)
         {
-            _configuration=configuration;
+            _configuration = configuration;
         }
         public async Task<IActionResult> Index()
         {
@@ -28,8 +29,8 @@ namespace MovieCoreMvcUI.Controllers
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        var result=await response.Content.ReadAsStringAsync();
-                        movieresult=JsonConvert.DeserializeObject<IEnumerable<Movie>>(result);
+                        var result = await response.Content.ReadAsStringAsync();
+                        movieresult = JsonConvert.DeserializeObject<IEnumerable<Movie>>(result);
                     }
                 }
             }
@@ -42,22 +43,32 @@ namespace MovieCoreMvcUI.Controllers
         [HttpPost]
         public async Task<IActionResult> MovieEntry(Movie movie)
         {
-            ViewBag.status = "";
-            using (HttpClient client=new HttpClient())
+            if (ModelState.IsValid)
             {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(movie), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "Movie/AddMovie";
-                using (var response = await client.PostAsync(endPoint, content))
+                ViewBag.status = "";
+                if (Request.Form.Files.Count > 0)
                 {
-                    if(response.StatusCode==System.Net.HttpStatusCode.OK)
+                    MemoryStream ms = new MemoryStream();
+                    Request.Form.Files[0].CopyTo(ms);
+                    movie.ImgPoster = ms.ToArray();
+                }
+                using (HttpClient client = new HttpClient())
+                {
+
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(movie), Encoding.UTF8, "application/json");
+                    string endPoint = _configuration["WebApiBaseUrl"] + "Movie/AddMovie";
+                    using (var response = await client.PostAsync(endPoint, content))
                     {
-                        ViewBag.status = "Ok";
-                        ViewBag.message = "Movie details saved successfully!";
-                    }
-                    else
-                    {
-                        ViewBag.status = "Error";
-                        ViewBag.message = "Wrong Entries!";
+                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            ViewBag.status = "Ok";
+                            ViewBag.message = "Movie details saved successfully!";
+                        }
+                        else
+                        {
+                            ViewBag.status = "Error";
+                            ViewBag.message = "Wrong Entries!";
+                        }
                     }
                 }
             }
@@ -69,7 +80,7 @@ namespace MovieCoreMvcUI.Controllers
             Movie movie = null;
             using (HttpClient client = new HttpClient())
             {
-                string endPoint = _configuration["WebApiBaseUrl"] + "Movie/GetMovieById?movieId="+MovieId;
+                string endPoint = _configuration["WebApiBaseUrl"] + "Movie/GetMovieById?movieId=" + MovieId;
                 using (var response = await client.GetAsync(endPoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -86,6 +97,12 @@ namespace MovieCoreMvcUI.Controllers
         public async Task<IActionResult> EditMovie(Movie movie)
         {
             ViewBag.status = "";
+            if (Request.Form.Files.Count > 0)
+            {
+                MemoryStream ms = new MemoryStream();
+                Request.Form.Files[0].CopyTo(ms);
+                movie.ImgPoster = ms.ToArray();
+            }
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(movie), Encoding.UTF8, "application/json");
@@ -130,7 +147,7 @@ namespace MovieCoreMvcUI.Controllers
         {
             ViewBag.status = "";
             using (HttpClient client = new HttpClient())
-            {               
+            {
                 string endPoint = _configuration["WebApiBaseUrl"] + "Movie/DeleteMovie?movieId=" + movie.Id;
                 using (var response = await client.DeleteAsync(endPoint))
                 {

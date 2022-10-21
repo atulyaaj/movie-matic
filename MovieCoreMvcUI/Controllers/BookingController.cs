@@ -37,13 +37,22 @@ namespace MovieCoreMvcUI.Controllers
         }
         public List<SelectListItem> GetUserName()
         {
+            //List<Booking> booking = new List<Booking>();
+            //List<SelectListItem> userid = new List<SelectListItem>();
+            //foreach (var item in booking)
+            //{
+            //    new Booking
+            //    {
+            //       UserId=item.User.FirstName,
+
+            //    };
+            //        //new SelectListItem{Value="2",Text="Ritik"}
+            //}
             List<SelectListItem> userid = new List<SelectListItem>()
             {
                 new SelectListItem{Value="Select",Text="Select User Name"},
-                new SelectListItem{Value="2",Text="Ritik"},
-                new SelectListItem{Value="3",Text="Harsh"},
-                new SelectListItem{Value="4",Text="Aditya"},
-                new SelectListItem{Value="5",Text="Ashutosh"}
+                new SelectListItem{Value="1",Text="Atulya"},
+
             };
             return userid;
         }
@@ -52,18 +61,16 @@ namespace MovieCoreMvcUI.Controllers
             List<SelectListItem> showtimeid = new List<SelectListItem>()
             {
                 new SelectListItem{Value="Select",Text="Select Show Time"},
-                new SelectListItem{Value="2",Text="2022-10-11 00:03:32.5680000"},
-                new SelectListItem{Value="6",Text="2022-09-25 21:30:00.0000000"},
-                new SelectListItem{Value="7",Text="2021-09-02 14:45:00.0000000"},
-                new SelectListItem{Value="8",Text="2022-10-29 21:30:00.0000000"},
-                new SelectListItem{Value="9",Text="2021-09-14 11:35:00.0000000"},
-                new SelectListItem{Value="10",Text="2022-10-17 22:10:00.0000000"}
+                new SelectListItem{Value="1",Text="2022-10-19 00:30:00.0000000"},
+                new SelectListItem{Value="2",Text="2022-10-20 09:30:00.0000000"},
+                new SelectListItem{Value="3",Text="2022-10-20 23:45:00.0000000"},
+                
             };
             return showtimeid;
         }
         public IActionResult BookingEntry()
         {
-            ViewBag.useridlist = GetUserName();
+           ViewBag.useridlist = GetUserName();
             ViewBag.showtimeidlist = GetShowTime();
             return View();
         }

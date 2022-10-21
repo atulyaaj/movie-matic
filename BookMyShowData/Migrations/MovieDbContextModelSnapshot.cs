@@ -51,8 +51,13 @@ namespace BookMyShowData.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<byte[]>("ImgPoster")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("MovieDesc")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("MoviePrice")
                         .HasColumnType("int");
@@ -61,6 +66,7 @@ namespace BookMyShowData.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -134,6 +140,9 @@ namespace BookMyShowData.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

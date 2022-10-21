@@ -64,7 +64,7 @@ namespace MovieCoreMvcUI.Controllers
                 using (var response = await client.PostAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                        return RedirectToAction("Index", "Movie");
+                        return RedirectToAction("Index", "UserView");
                     else
                     {
                         ViewBag.status = "Error";

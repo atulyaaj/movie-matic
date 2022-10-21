@@ -1,0 +1,32 @@
+﻿@model BookMyShowEntity.Admin
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<h2>Admin Login</h2>
+<hr />
+<form method="post">
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" asp-for="AdminEmail">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" value="" class="form-control" asp-for="AdminPassword">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Login">
+    <button type="button" class="btn btn-secondary">Reset</button>
+    <hr />
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
+    }
+
+</form>

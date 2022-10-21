@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace MovieAppCoreApi.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MovieController : ControllerBase

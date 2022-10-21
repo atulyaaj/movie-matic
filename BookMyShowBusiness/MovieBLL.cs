@@ -14,9 +14,6 @@ namespace BookMyShowBusiness
             this.movieDAL = movieDAL;
         }
 
-        public MovieBLL()
-        {
-        }
 
         public string AddMovieBLL(Movie movie)
         {

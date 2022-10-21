@@ -15,9 +15,9 @@
                     @*<th>User Id</th>*@
                     <th>User Name</th>
                     @*<th>Show Timing Id</th>*@
-                    <th>Movie Name</th>
-                    <th>Theatre Name</th>
-                    <th>Show Time</th>
+                    @*<th>Movie Name</th>
+                    <th>Theatre Name</th>*@
+                    <th>Show Timing Id</th>
                     <th>Number of Seats</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -30,8 +30,8 @@
                         <td>@booking.Id</td>
                         <td>@booking.User.FirstName</td>
                         @*<td>@booking.ShowTiming.Movie.Name</td>
-                        <td>@booking.ShowTiming.Theatre.Name</td>*@
-                        <td>@booking.ShowTiming.ShowTime</td>
+                    <td>@booking.ShowTiming.Theatre.Name</td>*@
+                        <td>@booking.ShowTiming.Id</td>
                         <td>@booking.Quantity</td>
                         <td><a asp-controller="Booking" asp-action="EditBooking" asp-route-BookingId="@booking.Id">Edit</a></td>
                         <td><a asp-controller="Booking" asp-action="DeleteBooking" asp-route-BookingId="@booking.Id">Delete</a></td>

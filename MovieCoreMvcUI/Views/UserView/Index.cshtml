@@ -1,0 +1,24 @@
+﻿@model IEnumerable<BookMyShowEntity.Movie>
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<h2>show user view</h2>
+
+<div class="row">
+    @foreach (var movie in Model)
+    {
+        string imageBase64Data = Convert.ToBase64String(movie.ImgPoster);
+        string imageDataURL = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img height="350" width="280" src="@imageDataURL" />
+                <div class="card-body">
+                    <h5 class="card-title">@movie.Name</h5>
+                    <h5 class="card-title">@movie.MoviePrice</h5>
+                    <p class="card-text">@movie.MovieDesc</p>
+                    <a href="#" class="btn btn-primary">Book</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

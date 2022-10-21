@@ -39,14 +39,10 @@ namespace MovieCoreMvcUI.Controllers
             List<SelectListItem> movieid = new List<SelectListItem>()
             {
                 new SelectListItem{Value="Select",Text="Select Movie Name"},
-                new SelectListItem{Value="3",Text="Veer"},
-                new SelectListItem{Value="6",Text="DDLJ"},
-                new SelectListItem{Value="7",Text="Race 3"},
-                new SelectListItem{Value="8",Text="Spider Man"},
-                new SelectListItem{Value="9",Text="Jodha Akbar"},
-                new SelectListItem{Value="10",Text="Kal Ho Na Ho"},
-                new SelectListItem{Value="11",Text="Iron Man"},
-                new SelectListItem{Value="12",Text="Conjuring"}
+                new SelectListItem{Value="1",Text="URI"},
+                new SelectListItem{Value="2",Text="Avengers"},
+                new SelectListItem{Value="3",Text="Joker"},
+      
             };
             return movieid;
         }
@@ -55,14 +51,9 @@ namespace MovieCoreMvcUI.Controllers
             List<SelectListItem> theatreid = new List<SelectListItem>()
             {
                 new SelectListItem{Value="Select",Text="Select Theatre Name"},
-                new SelectListItem{Value="2",Text="Sony"},
-                new SelectListItem{Value="3",Text="PVR"},
-                new SelectListItem{Value="4",Text="PVR II"},
-                new SelectListItem{Value="5",Text="Luminous Theatre"},
-                new SelectListItem{Value="6",Text="Animus Cinema"},
-                new SelectListItem{Value="7",Text="Peacock Opera House"},
-                new SelectListItem{Value="8",Text="Unison Theater"},
-                new SelectListItem{Value="9",Text="Imagine Assembly Hall"}
+                new SelectListItem{Value="1",Text="INOX II"},
+
+
             };
             return theatreid;
         }

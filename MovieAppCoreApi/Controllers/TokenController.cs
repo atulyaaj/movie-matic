@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System;
 using BookMyShowEntity;
 using System.Linq;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace MovieAppCoreApi.Controllers
 {
@@ -45,6 +47,7 @@ namespace MovieAppCoreApi.Controllers
                     new Claim("FirstName", user.FirstName),
                     new Claim("LastName", user.LastName),
                     new Claim("Email", user.Email),
+
                    };
 
                     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -82,5 +85,7 @@ namespace MovieAppCoreApi.Controllers
             return userInfo;
 
         }
+
+       
     }
 }

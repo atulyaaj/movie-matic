@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" >
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MovieCoreMvcUI</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Movie" asp-action="Index"><span style="color:Red">BookMy </span>Show</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,17 +35,27 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="Index">Booking</a>
                         </li>
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
-                        </li>
+                        </li>*@
                     </ul>
                 </div>
             </div>
+            <div>
+               <ul class="nav-item  " style="padding-top:10px">
+                   <a type="button" class="btn btn-outline-danger " asp-area="" asp-controller="Home" asp-action="Index">Sign Out</a>
+               </ul>
+            </div>
+
         </nav>
     </header>
+@*    <div class="container-fluid" style="height:100px;background-color:black;color:white">
+        My Movie List
+    </div>
+*@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

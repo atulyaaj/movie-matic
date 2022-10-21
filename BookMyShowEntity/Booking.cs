@@ -21,5 +21,6 @@ namespace BookMyShowEntity
         public int ShowTimingId { get; set; }
         public ShowTiming ShowTiming { get; set; }
 
+
     }
 }
