@@ -38,7 +38,7 @@
 
 | Home Page                      | User Registration Page                     |
 |-------------------------------|----------------------------------|
-| ![1](https://github.com/user-attachments/assets/adfa04df-bfbe-4e32-9ccf-0c0b17c1fdb0) | ![2](https://github.com/user-attachments/assets/30d1a0e4-b84c-48ae-a87e-e10c16c74840) |
+| ![1](https://github.com/user-attachments/assets/adfa04df-bfbe-4e32-9ccf-0c0b17c1fdb0) | ![2](https://github.com/user-attachments/assets/0407b2be-1687-42ab-a3e2-0ae27666c547) |
 
 ---
 
