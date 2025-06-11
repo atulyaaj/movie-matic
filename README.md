@@ -36,9 +36,9 @@
 
 ## 🖼️ Screenshots
 
-| Home Page                      | User Registration Page                     |
+| Home Page                      | User Registration Page           |
 |-------------------------------|----------------------------------|
-| ![1](https://github.com/user-attachments/assets/e067e16a-a218-4377-aee0-eceda56920b5) | ![2](https://github.com/user-attachments/assets/0407b2be-1687-42ab-a3e2-0ae27666c547) |
+| <img width="335" alt="1" src="https://github.com/user-attachments/assets/19c52b87-e661-4ff2-8265-8e2696ec6855" /> | <img width="335" alt="2" src="https://github.com/user-attachments/assets/88d632f1-c4c2-4ab4-8ec8-bc4c96b3f2ed" /> |
 
 ---
 
