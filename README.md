@@ -36,7 +36,7 @@
 
 ## 🖼️ Screenshots
 
-| Home Page                      | User Registration Page        |
+| Home Page                      | User Reg Page                 |
 |--------------------------------|-------------------------------|
 | <img width="335" alt="1" src="https://github.com/user-attachments/assets/19c52b87-e661-4ff2-8265-8e2696ec6855" /> | <img width="335" alt="2" src="https://github.com/user-attachments/assets/88d632f1-c4c2-4ab4-8ec8-bc4c96b3f2ed" /> |
 
