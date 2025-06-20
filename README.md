@@ -36,9 +36,16 @@
 
 ## 🖼️ Screenshots
 
+<img width="335" alt="1" src="https://github.com/user-attachments/assets/19c52b87-e661-4ff2-8265-8e2696ec6855" /> <br>
+🔐 *Home Page*
+
+
+<img width="335" alt="2" src="https://github.com/user-attachments/assets/88d632f1-c4c2-4ab4-8ec8-bc4c96b3f2ed" /><br>
+📋 *User Registration Page*
+
 | Home Page                      | User Registration Page        |
 |--------------------------------|-------------------------------|
-| <img style="max-width: 100%; height: auto;"  alt="1" src="https://github.com/user-attachments/assets/19c52b87-e661-4ff2-8265-8e2696ec6855" /> | <img style="max-width: 100%; height: auto;"  alt="2" src="https://github.com/user-attachments/assets/88d632f1-c4c2-4ab4-8ec8-bc4c96b3f2ed" /> |
+| <img width="335" alt="1" src="https://github.com/user-attachments/assets/19c52b87-e661-4ff2-8265-8e2696ec6855" /> | <img width="335" alt="2" src="https://github.com/user-attachments/assets/88d632f1-c4c2-4ab4-8ec8-bc4c96b3f2ed" /> |
 
 ---
 
